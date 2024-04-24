@@ -1,0 +1,24 @@
+.navbar-custom {
+    background-color: #000; /* Noir */
+  }
+  
+  .navbar-custom .navbar-toggler {
+    border-color: #fff; /* Blanc */
+  }
+  
+  .navbar-custom .navbar-toggler-icon {
+    background-color: #fff; /* Blanc */
+  }
+  
+  .navbar-custom .nav-link {
+    color: #fff !important; /* Blanc */
+  }
+  
+  .navbar-custom .nav-link:hover {
+    color: #ccc !important; /* Gris clair au survol */
+  }
+  
+  .navbar-custom .dropdown-item {
+    color: #000 !important; /* Noir pour les éléments de dropdown */
+  }
+  
