@@ -20,7 +20,7 @@ function NavBar (){
             <NavDropdown.Item  as={Link} to={"/ProfileView"}>Calendrier</NavDropdown.Item>
             <NavDropdown.Item  as={Link} to={"/ProfileView"}>Parametres</NavDropdown.Item>
             <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">Se Deconnecter</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to={"/"}>Se Deconnecter</NavDropdown.Item>
           </NavDropdown>
         </Nav>
       </Navbar.Collapse>

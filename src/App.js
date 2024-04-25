@@ -1,5 +1,5 @@
-//import Home from './Home'
 import Authentication from './component/Authentication/Authentication';
+import AddAbsence from './component/conge/AddAbsence';
 import './App.css';
 
 import CongeViews from './component/conge/CongeViews';
@@ -16,10 +16,12 @@ function App() {
     <Router>
     <ToastContainer />
       <Routes>
-       <Route exact path="/" element={<Authentication />}></Route>
+           <Route exact path="/" element={<Authentication />}></Route> 
+     
         <Route exact path="/CongeViews" element={<CongeViews />}></Route>
         <Route exact path="/ProfileView" element={<ProfileView />}></Route>
         <Route exact path="/AddConge" element={<AddConge />}></Route>
+        <Route exact path="/add-absence" element={<AddAbsence />}></Route>
       </Routes>
     </Router>
     </main>
