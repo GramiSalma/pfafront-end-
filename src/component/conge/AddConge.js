@@ -13,6 +13,9 @@ import NavBar from '../common/NavBar';
 
 
 const AddConge = () => {
+
+
+
     let navigate = useNavigate();
     const [showForm, setShowForm] = useState(false); // État pour afficher ou masquer le formulaire
 
@@ -22,7 +25,7 @@ const AddConge = () => {
 
     const [conge, setConges] = useState({
         employe: {
-            idEmploye: '', // Initialisation à une chaîne vide
+            idEmploye: 4, // Initialisation à une chaîne vide
         },
         dateDebutConge: '',
         dateFinConge: '',
@@ -60,7 +63,7 @@ const AddConge = () => {
         e.preventDefault();
         await axios.post(`http://localhost:8082/conges/${idEmploye}`, conge);
         toast.success('Ajouté avec succès', { autoClose: 5000 });
-        navigate('/CongeViews');
+        navigate('/add-absence');
     };
 
     return (
@@ -90,16 +93,9 @@ const AddConge = () => {
                                 <form onSubmit={(e) => saveConge(e)}>
                                     <div>
                                         <div className='input-group mb-5'>
-                                            <label className='input-group-text' htmlFor='employe.idEmploye'>idEmploye</label>
-                                            <input
-                                                className="form-control col-sm-6"
-                                                type="number"
-                                                name="employe.idEmploye" // Le nom du champ dans le formulaire
-                                                id="employe.idEmploye" // L'ID du champ
-                                                required
-                                                value={idEmploye} // La valeur du champ
-                                                onChange={(e) => handleInputChange(e)} // La fonction de gestion du changement
-                                            />
+                                            
+                                       
+
                                         </div>
                                         <div className='input-group mb-5'>
                                             <label className='input-group-text' htmlFor='dateDebutConge'>Date de début de congé</label>

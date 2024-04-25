@@ -17,7 +17,6 @@ function App() {
     <ToastContainer />
       <Routes>
            <Route exact path="/" element={<Authentication />}></Route> 
-     
         <Route exact path="/CongeViews" element={<CongeViews />}></Route>
         <Route exact path="/ProfileView" element={<ProfileView />}></Route>
         <Route exact path="/AddConge" element={<AddConge />}></Route>

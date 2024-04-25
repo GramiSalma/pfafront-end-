@@ -12,7 +12,7 @@ function NavBar (){
       <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(!expanded)} />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="/">Accueil</Nav.Link>
+          <Nav.Link href="/ProfileView">Accueil</Nav.Link>
           <Nav.Link as={Link} to={"/AddConge"}>DemanderConge</Nav.Link>
           <Nav.Link as={Link} to={"/AddConge"}>DemanderAbsence</Nav.Link>
           <NavDropdown title="Plus" id="basic-nav-dropdown">

@@ -22,7 +22,7 @@ const AddAbsence = () => {
 
     const [absence, setAbsences] = useState({
         employe: {
-            idEmploye: '', // Initialisation à une chaîne vide
+            idEmploye: 4, // Initialisation à une chaîne vide
         },
         dateAbsence: '',
         heureDebutAbsence: '',
@@ -62,7 +62,7 @@ const AddAbsence = () => {
         e.preventDefault();
         await axios.post(`http://localhost:8082/absences/${idEmploye}`, absence);
         toast.success('Ajouté avec succès', { autoClose: 5000 });
-        navigate('/AbsenceViews');
+        navigate('/AddConge');
     };
 
     return (
@@ -93,37 +93,38 @@ const AddAbsence = () => {
                                     <div >
 
 
-<div className='input-group mb-5'>
-<label className='input-group-text' htmlFor='employe.idEmploye'>idEmploye</label>
+<div className='input-group mb-4'>
+
 <input 
+hidden
   className="form-control col-sm-6" 
   type="number" 
   name="employe.idEmploye" // Le nom du champ dans le formulaire
   id="employe.idEmploye" // L'ID du champ
   required 
-  value={idEmploye} // La valeur du champ
+  value={4} // La valeur du champ
   onChange={(e) => handleInputChange(e)} // La fonction de gestion du changement
 />    
 </div>
 
 
 
-  <div className='input-group mb-5'>
+  <div className='input-group mb-4'>
 <label className='input-group-text' htmlFor='dateAbsence'>dateAbsence</label>
 <input className="form-control col-sm-6" type="date" name="dateAbsence"
 id="dateAbsence" required value={dateAbsence} onChange={(e)=>handleInputChange(e)} />    
 </div>
 
-<div className='input-group mb-5'>
+<div className='input-group mb-4'>
     <label className='input-group-text' htmlFor='heureDebutAbsence'>Heure de début de l'absence</label>
     <input className="form-control col-sm-6" type="time" name="heureDebutAbsence" id="heureDebutAbsence" required value={heureDebutAbsence} onChange={(e)=>handleInputChange(e)} />    
 </div>
-<div className='input-group mb-5'>
+<div className='input-group mb-4'>
     <label className='input-group-text' htmlFor='heureFinAbsence'>Heure de fin de l'absence</label>
     <input className="form-control col-sm-6" type="time" name="heureFinAbsence" id="heureFinAbsence" required value={heureFinAbsence} onChange={(e)=>handleInputChange(e)} />    
 </div>
 
-<div className='input-group mb-5'>
+<div className='input-group mb-4'>
     <label className='input-group-text' htmlFor='justificationAbsence'>Justification de l'absence</label>
     <input className="form-control col-sm-6" type="text" name="justificationAbsence" id="justificationAbsence" required value={justificationAbsence} onChange={(e)=>handleInputChange(e)} />    
 </div>
