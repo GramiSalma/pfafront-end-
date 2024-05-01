@@ -3,6 +3,7 @@ import axios from 'axios';
 import {FaEye,FaEdit, FaTrashAlt} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import NavBar from '../common/NavBar';
+
 const CongeViews = () => {
     const[conges,setConges]=useState([]);
 

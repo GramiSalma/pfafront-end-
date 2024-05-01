@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import Fullcalendar from "@fullcalendar/react";
-import dayGridPlugin from "@fullcalendar/daygrid";
-import timeGridPlugin from "@fullcalendar/timegrid";
-import interactionPlugin from "@fullcalendar/interaction";
-import { toast } from 'react-toastify';
+
+import { toast, ToastContainer } from 'react-toastify'; // Import ToastContainer
 import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer } from 'react-toastify';
+
 import NavBar from '../common/NavBar';
+import Calendar from './Calendar';
 
 
 const AddAbsence = () => {
@@ -25,8 +23,8 @@ const AddAbsence = () => {
             idEmploye: 4, // Initialisation à une chaîne vide
         },
         dateAbsence: '',
-        heureDebutAbsence: '',
-        heureFinAbsence: '',
+        heureDebutAbsence: '08:00', // Set the start time to 08:00
+        heureFinAbsence: '17:00', 
         justificationAbsence: '',
     });
 
@@ -61,8 +59,8 @@ const AddAbsence = () => {
     const saveAbsence = async (e) => {
         e.preventDefault();
         await axios.post(`http://localhost:8082/absences/${idEmploye}`, absence);
-        toast.success('Ajouté avec succès', { autoClose: 5000 });
         navigate('/AddConge');
+        toast.success('Ajouté avec succès', { autoClose:8000});
     };
 
     return (
@@ -72,16 +70,7 @@ const AddAbsence = () => {
             <div className='row'>
                 <div className='col-md-6'>
                     {    <div>
-      <Fullcalendar
-        plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-        initialView={"dayGridMonth"}
-        headerToolbar={{
-          start: "today prev,next", // will normally be on the left. if RTL, will be on the right
-          center: "title",
-          end: "dayGridMonth,timeGridWeek,timeGridDay", // will normally be on the right. if RTL, will be on the left
-        }}
-        height={"90vh"}
-      />
+                        <Calendar />
     </div>}
                 </div>
                 <div className='col-md-6'>
